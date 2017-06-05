@@ -1,4 +1,0 @@
-Java  0
-Dec  2
-Chicago  1
-hackathon  2
