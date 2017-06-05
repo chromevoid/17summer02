@@ -1,5 +1,6 @@
 // Mapper for the word counter
 
+import java.util.*;
 import java.io.IOException;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -20,6 +21,9 @@ public class WordCountMapper
         for (String word : words) {
             if (line.toLowerCase().contains(word.toLowerCase())) {
                 context.write(new Text(word), new IntWritable(1));
+            }
+            else {
+                context.write(new Text(word), new IntWritable(0));
             }
         }
     }
